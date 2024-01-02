@@ -4,9 +4,10 @@ const fsp = fs.promises;
 
 const app = express();
 
-app.get('/', (req, res, next) => {
+app.get('/api/', (req, res, next) => {
     fs.readFile('C:/Users/anant/OneDrive/Desktop/sample_json_files/file.json', (err, data) => {
-        res.send(JSON.parse(data));
+        let json = JSON.parse(data);
+        res.send(json);
     })
 });
 
